@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518218399741",
+    "project_id": "weatherappauth-bad7c",
+    "storage_bucket": "weatherappauth-bad7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518218399741:android:19369c607c3131a4572394",
+        "android_client_info": {
+          "package_name": "com.August.flutter_firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518218399741-kdkae2lc3un3mtlj3quih0vdb9kh4l4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrNhy4T2SztJPRc0s8l7lrWxAVvdtg22k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518218399741-kdkae2lc3un3mtlj3quih0vdb9kh4l4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
