@@ -14,7 +14,7 @@ class NetworkReq {
 
       return jsonDecode(data);
     } else {
-      print(res.statusCode);
+      print(res.statusCode.toString() + 'hi boy');
     }
   }
 }
