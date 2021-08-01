@@ -6,7 +6,7 @@ class NetworkReq {
 
   final String url;
 
-  void getData() async {
+  Future getData() async {
     http.Response res = await http.get(Uri.parse(url));
 
     if (res.statusCode == 200) {
@@ -14,7 +14,7 @@ class NetworkReq {
 
       return jsonDecode(data);
     } else {
-      print(res.statusCode.toString() + 'hi boy');
+      print(res.statusCode);
     }
   }
 }

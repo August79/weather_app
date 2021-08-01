@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_weather_app/components/welcome_screen/gradient_wrapper.dart';
 import 'package:my_weather_app/logic/auth_bloc/bloc/auth_bloc.dart';
+import 'package:my_weather_app/screens/home_screen.dart';
 import 'package:my_weather_app/utilities/constants.dart';
 import 'package:my_weather_app/components/login_page/login_text_field.dart';
 import 'package:my_weather_app/components/login_page/login_button.dart';
-import 'navBar/navigation_.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:my_weather_app/components/login_page/loading_circle_ind.dart';
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: 'Enter your pasword',
                         hideText: true,
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: 8.0),
                       BlocConsumer<AuthBloc, AuthState>(
                           builder: (context, state) {
                         if (state is AuthLoading) {
@@ -70,9 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             title: 'Login',
                             color: loginButtonColor,
                             function: () {
-                              eventOnTap(context,
-                                  email: emailController.text.trim(),
-                                  password: passwordController.text.trim());
+                              eventOnTap(
+                                context,
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(),
+                              );
                             },
                           );
                         }
@@ -83,7 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => NavigationPage(),
+                              builder: (context) =>
+                                  HomeScreen(currentUser: state.user),
                             ),
                           );
                         }

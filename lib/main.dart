@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_weather_app/logic/auth_bloc/bloc/auth_bloc.dart';
 import 'package:my_weather_app/screens/home_screen.dart';
 import 'package:my_weather_app/screens/navBar/navigation_.dart';
-import 'package:my_weather_app/screens/slider.dart';
 import 'screens/welcome_screen.dart';
 import 'services/authentication.dart';
 
@@ -24,8 +23,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.light(),
         home: 
-        HomeScreen(),
-        //WelcomeScreen(),
+        //HomeScreen(),
+        WelcomeScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );

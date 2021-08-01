@@ -1,15 +1,21 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_weather_app/components/home_screen/card.dart';
 import 'package:my_weather_app/components/welcome_screen/gradient_wrapper.dart';
 import 'package:my_weather_app/screens/profile_screen.dart';
 import 'package:my_weather_app/screens/search_screen.dart';
 import 'package:my_weather_app/services/location.dart';
+import 'package:my_weather_app/services/weather_model.dart';
 
 class HomeScreen extends StatelessWidget {
+  HomeScreen({this.currentUser});
+
+  final User? currentUser;
   final Location location = Location();
 
   @override
   Widget build(BuildContext context) {
+    // print(currentUser);
     return BgrGradientWrapper(
       color1: Colors.blue.shade300,
       color2: Colors.red.shade400,
@@ -27,15 +33,17 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         icon: Icon(
-                          Icons.settings,
+                          Icons.person,
                           color: Colors.white,
                           size: 32,
                         ),
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProfileScreen()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileScreen(),
+                            ),
+                          );
                         }),
                     MyCard(),
                     Column(
@@ -58,9 +66,13 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.white,
                               size: 32,
                             ),
-                            onPressed: () async{
-                              await location.getCurrentLocation();
-                              print(location.longitude);
+                            onPressed: () async {
+                              WeatherModel weather = WeatherModel();
+                              try {
+                                await weather.getWeatherByCoordinats();
+                              } catch (e) {
+                                print(e);
+                              }
                             }),
                       ],
                     ),

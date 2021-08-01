@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_weather_app/components/welcome_screen/gradient_wrapper.dart';
 
 class ProfileScreen extends StatelessWidget {
+  ProfileScreen({this.userEmail});
+  final String? userEmail;
+
   @override
   Widget build(BuildContext context) {
     return BgrGradientWrapper(
@@ -10,6 +13,7 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [],
         ),
       ),

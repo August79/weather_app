@@ -6,6 +6,7 @@ import 'package:my_weather_app/components/login_page/loading_circle_ind.dart';
 import 'package:my_weather_app/components/login_page/login_button.dart';
 import 'package:my_weather_app/components/welcome_screen/gradient_wrapper.dart';
 import 'package:my_weather_app/logic/auth_bloc/bloc/auth_bloc.dart';
+import 'package:my_weather_app/screens/home_screen.dart';
 import 'package:my_weather_app/screens/navBar/navigation_.dart';
 import 'package:my_weather_app/utilities/constants.dart';
 import 'package:my_weather_app/components/login_page/login_text_field.dart';
@@ -59,7 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           hintText: 'Enter your pasword',
                           hideText: true,
                         ),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: 8.0),
                         BlocConsumer<AuthBloc, AuthState>(
                             builder: (context, state) {
                           if (state is AuthLoading) {
@@ -82,7 +83,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => NavigationPage(),
+                                builder: (context) => HomeScreen(currentUser: state.user),
                               ),
                             );
                           }
