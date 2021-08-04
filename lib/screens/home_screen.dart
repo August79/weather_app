@@ -45,7 +45,11 @@ class HomeScreen extends StatelessWidget {
                             ),
                           );
                         }),
-                    MyCard(),
+                    MyCard(
+                      cityName: 'Moscow',
+                      temperature: '30',
+                      condition: 'cloudy',
+                    ),
                     Column(
                       children: [
                         IconButton(
@@ -67,12 +71,7 @@ class HomeScreen extends StatelessWidget {
                               size: 32,
                             ),
                             onPressed: () async {
-                              WeatherModel weather = WeatherModel();
-                              try {
-                                await weather.getWeatherByCoordinats();
-                              } catch (e) {
-                                print(e);
-                              }
+                              
                             }),
                       ],
                     ),

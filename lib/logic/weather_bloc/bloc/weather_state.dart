@@ -16,4 +16,10 @@ class WeatherDataErrore extends WeatherState {
   WeatherDataErrore(this.message);
 }
 
-class WeatherDataLoaded extends WeatherState {}
+class WeatherDataLoaded extends WeatherState {
+  final String city;
+  final String temperature;
+  final String condition;
+
+  WeatherDataLoaded(this.city, this.temperature, this.condition);
+}

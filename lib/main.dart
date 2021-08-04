@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_weather_app/logic/auth_bloc/bloc/auth_bloc.dart';
 import 'package:my_weather_app/screens/home_screen.dart';
-import 'package:my_weather_app/screens/navBar/navigation_.dart';
 import 'screens/welcome_screen.dart';
 import 'services/authentication.dart';
 

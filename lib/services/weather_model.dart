@@ -13,6 +13,14 @@ class WeatherModel {
         '$openWeatherMapUrl?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey');
 
     var weatherData = await networkReq.getData();
-    print(weatherData);
+    return weatherData;
+  }
+
+  Future<void> getWeatherByCityName(String cityName) async {
+    NetworkReq networkReq =
+        NetworkReq('$openWeatherMapUrl?id=$cityName&appid=$apiKey');
+
+    var weatherData = await networkReq.getData();
+    return weatherData;
   }
 }

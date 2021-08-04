@@ -17,4 +17,3 @@ const kLoginTextFieldInputDecoration = InputDecoration(
       borderRadius: BorderRadius.all(Radius.circular(12))),
 );
 
-const homeScreenCardTextStyle = TextStyle(color: Colors.white, fontSize: 30);
